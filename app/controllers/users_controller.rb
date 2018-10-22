@@ -37,6 +37,10 @@ class UsersController < ApplicationController
     @followers = @user.followers.page(params[:page])
     counts(@user)
   end
+  
+    def feed_microposts
+    Micropost.where(user_id: self.following_ids + [self.id])
+  end
 
 private
   def user_params
