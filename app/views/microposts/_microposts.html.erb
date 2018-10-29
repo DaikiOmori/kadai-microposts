@@ -12,6 +12,7 @@
           <p><%= micropost.content %></p>
         </div>
       </div>
+    <%= render 'likes/like_button', micropost: micropost %>
     </li>
   <% end %>
   <%= paginate microposts %>
